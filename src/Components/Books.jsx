@@ -1,9 +1,9 @@
-import React, { useEffect, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { observer } from "mobx-react";
 import { bookStore } from "../Books/Books.store";
 import { apiStateStore } from "../api/ApiState.store";
-import BookList from "../Views/BookList";
-import NewBookForm from "../Views/NewBook.form";
+import BookList from "../Views/BookList.jsx";
+import NewBookForm from "../Views/NewBook.form.jsx";
 
 const Books = observer(() => {
   useEffect(() => {

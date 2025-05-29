@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import ApiGateway from "../api/ApiGateway.js";
 
 class BooksRepository {
@@ -8,12 +7,8 @@ class BooksRepository {
 
   getBooks = (filter = "") => this.httpGateway.get(`/${filter}`);
 
-  addBook = async ({ name, author }) => {
-    const result = await this.httpGateway.post("/", {
-      name,
-      author,
-      id: uuidv4(),
-    });
+  addBook = async (book) => {
+    const result = await this.httpGateway.post("/", book);
     return result?.status === "ok";
   };
 

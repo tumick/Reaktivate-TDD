@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { makeAutoObservable, runInAction } from "mobx";
 import booksRepository from "../Books/Books.repository";
 
@@ -33,6 +34,9 @@ export class BookStore {
 
   async addBook(book) {
     try {
+      if (!book.id) {
+        book.id = uuidv4() // Since backend does not assign IDs for private books, we generate a unique ID here
+      }
       if (await booksRepository.addBook(book)) {
         runInAction(() => {
           this.books = [...this.books, book];

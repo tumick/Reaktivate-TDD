@@ -1,9 +1,8 @@
-import React from "react";
 import { observer } from "mobx-react";
 import { bookStore } from "../Books/Books.store";
 import { apiStateStore } from "../api/ApiState.store";
-import ModeSwitch from "./ModeSwitch";
-import Spinner from "./Spinner";
+import ModeSwitch from "./ModeSwitch.jsx";
+import Spinner from "./Spinner.jsx";
 
 const Header = observer(() => {
   return (

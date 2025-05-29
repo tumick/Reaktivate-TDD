@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback, memo } from "react";
 
-const NewBookForm = React.memo(({ onSubmit, loading }) => {
+const NewBookForm = memo(({ onSubmit, loading }) => {
   const [form, setForm] = useState({ author: "", name: "" });
 
   const handleChange = (e) => {
@@ -12,7 +12,6 @@ const NewBookForm = React.memo(({ onSubmit, loading }) => {
 
   const handleSubmit = useCallback(
     (e) => {
-      console.log("handleSubmit");
       e.preventDefault();
       onSubmit(form);
     },

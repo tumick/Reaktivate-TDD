@@ -1,5 +1,4 @@
-import React from "react";
-import BookItem from "./BookItem";
+import BookItem from "./BookItem.jsx";
 
 export default function BookList({ list, loading }) {
   return list ? (

@@ -1,20 +1,22 @@
-import { API_BASE } from "./config";
+import "dotenv";
 import { safeFetch } from "./wrapFetch";
 
+const apiBase = import.meta.env.VITE_API_BASE;
+
 export default class ApiGateway {
-  get = (path) => safeFetch(`${API_BASE}${path}`);
+  get = (path) => safeFetch(`${apiBase}${path}`);
 
   post = (path, payload) =>
-    safeFetch(`${API_BASE}${path}`, {
+    safeFetch(`${apiBase}${path}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(payload),
     });
-    
+
   put = (path) =>
-    safeFetch(`${API_BASE}${path}`, {
+    safeFetch(`${apiBase}${path}`, {
       method: "PUT",
     });
 }
