@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px;
+}
+
+.app button {
+  margin: 4px;
+  border: 1px solid black;
+  min-width: 64px;
+  min-height: 24px;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px solid black;
+  margin-bottom: 16px;
+}
+
+.header span {
+  margin-left: 6px;
+}
+
+.mode-switch {
+  display: inline;
+  margin-left: 36px;
+}
+
+.toast-error {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #800;
+  border-radius: 4px;
+  box-shadow: 4px 4px 2px 1px rgba(128, 0, 0, 0.2);
+  gap: 1em;
+  color: red;
+  background-color: white;
+  z-index: 9999;
+}
+
+.skeleton {
+  color: #888;
+}
+
+.spinner {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 28px;
+  margin-top: -6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.new-book-form {
+  margin-top: 24px;
+  border-top: 1px solid black;
+  padding-top: 8px;
+}
